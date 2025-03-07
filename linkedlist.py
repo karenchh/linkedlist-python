@@ -56,11 +56,28 @@ class LinkedList:
         precurrent.next = current.next           
         current = None
         return target
+    
+    def search(self,data):
+
+        current = self.head
+
+        while current != None:
+            if current.data == data:
+                return current.data
+            else:
+                current = current.next
+
 
 linkedlist1 = LinkedList()
 linkedlist1.append(Node(10))
 linkedlist1.append(Node(20))
 linkedlist1.append(Node(30))
 linkedlist1.prepend(Node(5))
-print(f"You removed {linkedlist1.delete(20)}")
 linkedlist1.printlist()
+print("===========================================")
+print(f"You removed {linkedlist1.delete(20)}")
+print("===========================================")
+linkedlist1.printlist()
+print("===========================================")
+print("We are searching for the node holding the value 10 if we found it we will return its data: ")
+print(linkedlist1.search(10))
