@@ -1,0 +1,21 @@
+ Singly Linked List Operations
+Create a Python program to implement a singly linked list with the following operations:
+
+#### Requirements:
+1. *Node Class:*
+   - Attributes: data (to store the value) and next (to point to the next node).
+
+2. *LinkedList Class:*
+   - Attributes: head (to point to the first node in the list).
+   - Methods:
+     - append(data): Adds a new node with the given data to the end of the list.
+     - prepend(data): Adds a new node with the given data to the beginning of the list.
+     - display(): Prints all the elements in the linked list.
+     - delete(data): Deletes the first occurrence of a node with the given data.
+
+3. *Tasks:*
+   - Create a linked list and append the following elements: 10, 20, 30.
+   - Prepend the element 5 to the list.
+   - Display the linked list.
+   - Delete the element 20 from the list.
+   - Display the updated linked list
