@@ -37,8 +37,11 @@ class LinkedList:
         if self.length == 0:
             self.head = node
         else:
-            node.next = self.head  # Point new node to the current head
-            self.head = node  
+           # node.next = self.head  # Point new node to the current head
+           # self.head = node  
+           current = self.head 
+           self.head = node
+           self.head.next = current
                             
     def delete(self, data):
 
@@ -74,18 +77,59 @@ class LinkedList:
         current = self.head
 
         while current != None:
-
             len += 1
             current = current.next
 
         return len
 
+    def insert(self, node, pos):
+        
+        if pos < 0 or pos > self.length:
+            return None
+        
+        elif pos == 0:
+
+            node.next = self.head  # Point new node to the current head
+            self.head = node  
+
+        elif pos == self.length :
+
+            if self.length == 0:
+                self.head = node
+            else:
+                current = self.head
+                while current.next != None:
+                    current = current.next
+            
+                current.next = node
+
+        else:
+
+            precurrent = None
+            current = self.head
+            position = 0
+            
+            while current != None:
+
+                if position == pos:
+                    break 
+                else:
+                    precurrent = current
+                    current = current.next 
+                position +=1 
+
+            precurrent.next = node
+            node.next = current
+            current = None
+
+        self.length +=1
 
 linkedlist1 = LinkedList()
 linkedlist1.append(Node(10))
 linkedlist1.append(Node(20))
 linkedlist1.append(Node(30))
 linkedlist1.prepend(Node(5))
+linkedlist1.insert(Node(8), 2)
 linkedlist1.printlist()
 print(f"The length of the list is: {linkedlist1.Length()}")
 print("===========================================")
